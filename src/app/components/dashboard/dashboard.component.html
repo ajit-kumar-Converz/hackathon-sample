@@ -1,21 +1,15 @@
-<div class="title">Dummy Cards</div>
+<div class="title">Cards</div>
 <div class="data-cards">
-  <app-card
-    *ngFor="let item of dataSource"
-    [title]="item.project_name"
-    [duration]="item.duration"
-    [emissions_rate]="item.emissions_rate"
-    [data]="item"
-  ></app-card>
+  <app-card [data]="data"></app-card>
 </div>
 
-<div class="title">Dummy Chart</div>
+<div class="title">Chart</div>
 <div class="data-chart">
   <app-pie-chart [data]="dummyChartData" [type]="'doughnut'"></app-pie-chart>
   <app-line-chart [data]="dummyChartData" [type]="'line'"></app-line-chart>
 </div>
 
-<div class="title">Dummy Chart</div>
+<div class="title">Table</div>
 <div class="energy-table">
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <!--- Note that these columns can be defined in any order.
@@ -43,6 +37,11 @@
     <ng-container matColumnDef="symbol">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Energy Consumed</th>
       <td mat-cell *matCellDef="let element">{{ element.energy_consumed }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="timestamp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Timestamp</th>
+      <td mat-cell *matCellDef="let element">{{ element.timestamp }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -21,7 +21,7 @@ export class LineChartComponent implements AfterViewInit {
       scales: {
         y: {
           beginAtZero: true,
-          display: false,
+          display: true,
         },
       },
     };

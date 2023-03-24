@@ -9,8 +9,6 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-const ELEMENT_DATA: any[] = dummyTable;
-
 /**
  * @title Basic use of `<table mat-table>`
  */
@@ -21,18 +19,36 @@ const ELEMENT_DATA: any[] = dummyTable;
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  data: any[];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  data: any;
+  dataFromId: any[];
+  displayedColumns: string[] = [
+    'position',
+    'name',
+    'weight',
+    'symbol',
+    'timestamp',
+  ];
+  dataSource: any;
   dummyChartData = dummyChart;
 
   constructor(private dataService: DataService) {
     this.data = [];
+    this.dataFromId = [];
+    this.dummyChartData = [] as any;
   }
 
   ngOnInit(): void {
-    this.dataService.getData().subscribe((data) => {
-      this.data = data;
+    this.dataService.getData().subscribe((data: any) => {
+      this.data = dummyTable.data;
+      this.dataSource = JSON.parse(dummyTable.data.functions);
+      console.log(this.data);
+    });
+  }
+
+  // dummy with payload
+  test() {
+    this.dataService.getDataById('id').subscribe((data) => {
+      this.dataFromId = data;
       console.log(this.data);
     });
   }

@@ -1,7 +1,7 @@
 <mat-card class="example-card">
-  <mat-card-title class="title">{{ title }}</mat-card-title>
+  <mat-card-title class="title">{{ data.project_name }}</mat-card-title>
   <mat-card-content>
-    <p>Duration: {{ duration }}</p>
-    <p class="long-text">Emission rate: {{ emissions_rate }}</p>
+    <p>Energy Consumed: {{ data.energy_consumed }}</p>
+    <p class="long-text">Total Emission: {{ data.total_emission }}</p>
   </mat-card-content>
 </mat-card>

@@ -14,4 +14,8 @@ export class DataService {
   getData(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  getDataById(id: any): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl + '/' + id);
+  }
 }
