@@ -1,0 +1,21 @@
+example-card {
+  max-width: 400px;
+}
+.long-text {
+  word-break: break-all;
+}
+.title {
+  width: 100%;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  margin: 0 0 9px 0;
+  margin-left: 0px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.title::first-letter {
+  text-transform: capitalize;
+}

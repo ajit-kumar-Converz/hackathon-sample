@@ -1,0 +1,29 @@
+.data-cards {
+  grid-gap: 24px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(238px, 1fr)) !important;
+  max-height: calc(100vh - 252px);
+  padding: 0 24px;
+}
+table {
+  width: 100%;
+}
+.energy-table,
+.data-chart {
+  padding: 0 24px 24px;
+}
+.data-chart {
+  display: inline-flex;
+  width: 100%;
+}
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: #424242;
+  padding: 24px;
+}
